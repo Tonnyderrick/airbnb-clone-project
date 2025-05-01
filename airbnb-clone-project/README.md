@@ -148,3 +148,21 @@ payment_date
 Relationships:
 
 A payment is made by a user for a specific booking.
+
+## Feature Breakdown
+This section outlines the core features of the Airbnb Clone project and how each contributes to the functionality of the platform.
+
+User Management
+Users can register, log in, and manage their profiles. Depending on their role (guest or host), users can list properties or make bookings.
+
+Property Management
+Hosts can list new properties by providing details such as title, description, location, and price. They can also update or delete listings as needed.
+
+Booking System
+Guests can view property availability and make bookings for specific dates. The system ensures that double-booking is avoided and allows guests to view their booking history.
+
+Reviews & Ratings
+After completing a stay, guests can leave reviews and rate the property. This feature helps maintain transparency and trust among users.
+
+Payment Integration
+The platform allows users to securely pay for bookings. Payment records are stored and linked to bookings and users for tracking and reporting.
