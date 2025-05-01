@@ -1,8 +1,8 @@
-Airbnb Clone – Backend
+**Airbnb Clone – Backend**
 
 This project is a backend clone of the Airbnb platform, designed to simulate core functionalities such as user authentication, property listings, bookings, and payments. It's built with scalability and modularity in mind, using Django and RESTful API standards.
 
-Project Objectives
+## Project Objectives
 
 Recreate key features of Airbnb for learning and prototyping.
 
@@ -24,7 +24,7 @@ REST API: Fully documented endpoints with OpenAPI/Swagger.
 
 Team Roles Tonny Derick - Backend developer
 
-Responsibilities:
+## Responsibilities:
 Design and implement RESTful API endpoints.
 Develop business logic for bookings, user management, payments, etc.
 Ensure API security, scalability, and performance.
@@ -56,5 +56,95 @@ This project utilizes a modern and scalable technology stack to deliver robust b
 - **Purpose**: Docker helps package the application and its dependencies into containers, ensuring consistency across development, testing, and production environments.
 
 ###  CI/CD Pipelines (e.g., GitHub Actions)
-- **Purpose**: CI/CD automates testing, building, and deployment of the application whenever changes are made, improving developer productivity and software quality.
+**Purpose**: CI/CD automates testing, building, and deployment of the application whenever changes are made, improving developer productivity and software quality.
 
+ ## Database Design
+The application will use a relational database to manage key entities. Below are the main tables and their relationships.
+
+Entities and Key Fields
+ Users
+id (Primary Key)
+
+name
+
+email
+
+password_hash
+
+user_type (e.g., host, guest)
+
+Relationships:
+
+A user can own multiple properties.
+
+A user can make multiple bookings.
+
+A user can write multiple reviews.
+
+A user can make multiple payments.
+
+Properties
+id (Primary Key)
+
+user_id (Foreign Key → Users)
+
+title
+
+description
+
+location
+
+Relationships:
+
+Each property belongs to a user (host).
+
+A property can have multiple bookings.
+
+A property can receive multiple reviews.
+
+Bookings
+id (Primary Key)
+
+user_id (Foreign Key → Users)
+
+property_id (Foreign Key → Properties)
+
+start_date
+
+end_date
+
+Relationships:
+
+A booking is made by a user (guest) for a property.
+
+A booking can be associated with one payment.
+
+## Reviews
+id (Primary Key)
+
+user_id (Foreign Key → Users)
+
+property_id (Foreign Key → Properties)
+
+rating
+
+comment
+
+Relationships:
+
+A review is written by a user for a property.
+
+## Payments
+id (Primary Key)
+
+user_id (Foreign Key → Users)
+
+booking_id (Foreign Key → Bookings)
+
+amount
+
+payment_date
+
+Relationships:
+
+A payment is made by a user for a specific booking.
