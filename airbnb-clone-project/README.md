@@ -187,3 +187,23 @@ Payments will be processed using a secure and trusted third-party gateway. This 
 
 Security is essential to protect user data, build trust, and prevent unauthorized access to the system. Without these measures, the platform would be vulnerable to data leaks, account takeovers, and financial fraud.
 
+## CI/CD Pipeline
+Continuous Integration and Continuous Deployment (CI/CD) pipelines are automated workflows that help streamline the software development process. They automatically test, build, and deploy code every time changes are made, ensuring that new updates are safe, stable, and delivered quickly.
+
+Why CI/CD is Important
+Improves Code Quality: Automated testing catches bugs early before they reach production.
+
+Speeds Up Deployment: Changes can be delivered faster and more reliably with fewer manual steps.
+
+Promotes Team Collaboration: Developers can integrate their code regularly, reducing merge conflicts and improving workflow.
+
+Tools to Use
+GitHub Actions: Automates testing, linting, and deployment processes directly from the GitHub repository.
+
+Docker: Ensures consistent environments across development, testing, and production.
+
+Heroku / Netlify / AWS: Can be used as deployment platforms to host the final application.
+
+
+
+
