@@ -166,3 +166,24 @@ After completing a stay, guests can leave reviews and rate the property. This fe
 
 Payment Integration
 The platform allows users to securely pay for bookings. Payment records are stored and linked to bookings and users for tracking and reporting.
+
+## API Security
+Security is a fundamental part of the backend design for the Airbnb Clone. The following key measures will be implemented to protect user data and ensure a safe, reliable experience.
+
+Authentication
+Users must log in using secure credentials to access protected routes. This ensures that only verified users can perform actions like booking properties or making payments.
+
+Authorization
+Role-based access control will restrict certain actions to specific user types (e.g., only hosts can create listings). This prevents misuse of features and maintains platform integrity.
+
+Rate Limiting
+APIs will enforce rate limiting to protect against brute-force attacks and abuse. This helps preserve server resources and enhances system stability.
+
+Data Encryption
+Sensitive data such as passwords will be hashed before storage, and all traffic will be secured with HTTPS. This protects against eavesdropping and data breaches.
+
+Secure Payment Handling
+Payments will be processed using a secure and trusted third-party gateway. This ensures financial data is not directly exposed to the backend, reducing liability and fraud risks.
+
+Security is essential to protect user data, build trust, and prevent unauthorized access to the system. Without these measures, the platform would be vulnerable to data leaks, account takeovers, and financial fraud.
+
