@@ -1,9 +1,9 @@
-Airbnb Clone Project
+## Airbnb Clone Project
 Overview
 The Airbnb Clone project is a full-stack web application that replicates core features of the Airbnb platform. The goal is to understand web development concepts, backend and frontend integration, API design, database modeling, and DevOps practices.
 Tech Stack: Django, PostgreSQL, GraphQL, React, Docker, GitHub Actions.
 
-Team Roles
+## Team Roles
 Backend Developer: Builds and maintains server-side logic, APIs, and database interactions.
 
 Frontend Developer: Creates interactive user interfaces using modern frontend frameworks.
@@ -14,7 +14,7 @@ DevOps Engineer: Implements CI/CD pipelines and manages deployments using tools 
 
 Project Manager: Oversees task distribution, progress tracking, and ensures deadlines are met.
 
-Technology Stack
+## Technology Stack
 Django: Web framework used to build RESTful APIs and manage backend logic.
 
 PostgreSQL: Relational database for storing structured data like user accounts, listings, and bookings.
@@ -27,7 +27,7 @@ Docker: Containerizes the application for consistent deployment across environme
 
 GitHub Actions: Automates workflows like testing, building, and deployment.
 
-Database Design
+## Database Design
 Users
 
 Fields: id, name, email, password, role
@@ -69,7 +69,7 @@ Review System: Users can rate and review properties, helping others make informe
 
 Payment Integration: Facilitates secure transactions and maintains payment history per booking.
 
-API Security
+## API Security
 Authentication: Ensures only registered users can access protected endpoints via tokens or sessions.
 
 Authorization: Restricts actions based on user roles (e.g., only owners can manage their listings).
@@ -86,14 +86,14 @@ Ensures fair and correct access control.
 
 Enhances trust in the platform by preventing fraudulent or malicious activities.
 
-CI/CD Pipeline
+## CI/CD Pipeline
 CI/CD (Continuous Integration/Continuous Deployment) automates testing, building, and deploying the app.
 
 Continuous Integration: Automatically runs tests whenever new code is pushed.
 
 Continuous Deployment: Delivers updated code to production seamlessly using automation tools.
 
-Tools Used:
+## Tools Used:
 
 GitHub Actions: Automates test and deploy workflows.
 
