@@ -86,14 +86,14 @@ Ensures fair and correct access control.
 
 Enhances trust in the platform by preventing fraudulent or malicious activities.
 
-## CI/CD Pipeline
+CI/CD Pipeline
 CI/CD (Continuous Integration/Continuous Deployment) automates testing, building, and deploying the app.
 
 Continuous Integration: Automatically runs tests whenever new code is pushed.
 
 Continuous Deployment: Delivers updated code to production seamlessly using automation tools.
 
-## Tools Used:
+ Tools Used:
 
 GitHub Actions: Automates test and deploy workflows.
 
