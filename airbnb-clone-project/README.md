@@ -176,10 +176,10 @@ Users must log in using secure credentials to access protected routes. This ensu
 Authorization
 Role-based access control will restrict certain actions to specific user types (e.g., only hosts can create listings). This prevents misuse of features and maintains platform integrity.
 
-Rate Limiting
+## Rate Limiting
 APIs will enforce rate limiting to protect against brute-force attacks and abuse. This helps preserve server resources and enhances system stability.
 
-Data Encryption
+## Data Encryption
 Sensitive data such as passwords will be hashed before storage, and all traffic will be secured with HTTPS. This protects against eavesdropping and data breaches.
 
 Secure Payment Handling
