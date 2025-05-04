@@ -1,209 +1,101 @@
-**Airbnb Clone – Backend**
+Airbnb Clone Project
+Overview
+The Airbnb Clone project is a full-stack web application that replicates core features of the Airbnb platform. The goal is to understand web development concepts, backend and frontend integration, API design, database modeling, and DevOps practices.
+Tech Stack: Django, PostgreSQL, GraphQL, React, Docker, GitHub Actions.
 
-This project is a backend clone of the Airbnb platform, designed to simulate core functionalities such as user authentication, property listings, bookings, and payments. It's built with scalability and modularity in mind, using Django and RESTful API standards.
+Team Roles
+Backend Developer: Builds and maintains server-side logic, APIs, and database interactions.
 
-## Project Objectives
+Frontend Developer: Creates interactive user interfaces using modern frontend frameworks.
 
-Recreate key features of Airbnb for learning and prototyping.
+Database Administrator: Designs, maintains, and secures the database.
 
-Build a secure, scalable backend for a booking platform.
+DevOps Engineer: Implements CI/CD pipelines and manages deployments using tools like Docker and GitHub Actions.
 
-Support APIs for frontend integration and mobile clients. Key Features
+Project Manager: Oversees task distribution, progress tracking, and ensures deadlines are met.
 
-User Management: Register, login, and manage profiles securely.
+Technology Stack
+Django: Web framework used to build RESTful APIs and manage backend logic.
 
-Property Listings: Create, update, delete, and browse properties.
+PostgreSQL: Relational database for storing structured data like user accounts, listings, and bookings.
 
-Booking System: Book stays, cancel, and view history.
+GraphQL: API query language for flexible and efficient data fetching.
 
-Payment Processing: Simulate payments and transaction records.
+React: Frontend framework used to build responsive UI components.
 
-Reviews: Leave and manage property reviews and ratings.
+Docker: Containerizes the application for consistent deployment across environments.
 
-REST API: Fully documented endpoints with OpenAPI/Swagger.
+GitHub Actions: Automates workflows like testing, building, and deployment.
 
-Team Roles Tonny Derick - Backend developer
+Database Design
+Users
 
-## Responsibilities:
-Design and implement RESTful API endpoints.
-Develop business logic for bookings, user management, payments, etc.
-Ensure API security, scalability, and performance.
-Collaborate closely with frontend and database teams.
+Fields: id, name, email, password, role
 
-## Technology Stack
-
-This project utilizes a modern and scalable technology stack to deliver robust backend functionality and seamless data handling.
-
-### Django
-- **Purpose**: Django is a high-level Python web framework used to rapidly build secure and maintainable web applications. In this project, Django serves as the core framework for handling HTTP requests, defining models, managing user sessions, and more.
-
-###  Django REST Framework (DRF)
-- **Purpose**: DRF extends Django to make it easier to build RESTful APIs. It handles serialization, authentication, and view logic to enable smooth interaction between the frontend and backend.
-
-###  PostgreSQL
-- **Purpose**: A powerful open-source relational database system used to store structured data such as users, property listings, bookings, and reviews.
-
-###  GraphQL
-- **Purpose**: GraphQL is used as an alternative to REST for more flexible and efficient data querying. It allows clients to request exactly the data they need in a single API call.
-
-###  Celery
-- **Purpose**: Celery is used for handling asynchronous tasks like sending confirmation emails, processing payments, or scheduling background jobs.
-
-###  Redis
-- **Purpose**: Redis is used alongside Celery for task queue management and as a cache to improve response times and reduce database load.
-
-###  Docker
-- **Purpose**: Docker helps package the application and its dependencies into containers, ensuring consistency across development, testing, and production environments.
-
-###  CI/CD Pipelines (e.g., GitHub Actions)
-**Purpose**: CI/CD automates testing, building, and deployment of the application whenever changes are made, improving developer productivity and software quality.
-
- ## Database Design
-The application will use a relational database to manage key entities. Below are the main tables and their relationships.
-
-Entities and Key Fields
- Users
-id (Primary Key)
-
-name
-
-email
-
-password_hash
-
-user_type (e.g., host, guest)
-
-Relationships:
-
-A user can own multiple properties.
-
-A user can make multiple bookings.
-
-A user can write multiple reviews.
-
-A user can make multiple payments.
+Relationships: Can create properties, write reviews, and make bookings.
 
 Properties
-id (Primary Key)
 
-user_id (Foreign Key → Users)
+Fields: id, owner_id, title, description, price
 
-title
-
-description
-
-location
-
-Relationships:
-
-Each property belongs to a user (host).
-
-A property can have multiple bookings.
-
-A property can receive multiple reviews.
+Relationships: Belongs to a user (owner), has many bookings and reviews.
 
 Bookings
-id (Primary Key)
 
-user_id (Foreign Key → Users)
+Fields: id, user_id, property_id, start_date, end_date
 
-property_id (Foreign Key → Properties)
+Relationships: Belongs to a user and a property.
 
-start_date
+Reviews
 
-end_date
+Fields: id, user_id, property_id, rating, comment
 
-Relationships:
+Relationships: Written by a user for a property.
 
-A booking is made by a user (guest) for a property.
+Payments
 
-A booking can be associated with one payment.
+Fields: id, booking_id, amount, status, transaction_date
 
-## Reviews
-id (Primary Key)
+Relationships: Linked to a booking.
 
-user_id (Foreign Key → Users)
+Feature Breakdown
+User Management: Allows users to sign up, log in, update profiles, and authenticate securely.
 
-property_id (Foreign Key → Properties)
+Property Management: Users can create, edit, and delete listings, upload images, and set prices and availability.
 
-rating
+Booking System: Enables users to view listings, book available properties, and manage reservations.
 
-comment
+Review System: Users can rate and review properties, helping others make informed decisions.
 
-Relationships:
+Payment Integration: Facilitates secure transactions and maintains payment history per booking.
 
-A review is written by a user for a property.
+API Security
+Authentication: Ensures only registered users can access protected endpoints via tokens or sessions.
 
-## Payments
-id (Primary Key)
+Authorization: Restricts actions based on user roles (e.g., only owners can manage their listings).
 
-user_id (Foreign Key → Users)
+Rate Limiting: Prevents abuse by limiting the number of requests per user or IP.
 
-booking_id (Foreign Key → Bookings)
+Data Validation: Prevents injection attacks and ensures input data meets required formats.
 
-amount
+Why Security Matters:
 
-payment_date
+Protects sensitive user data like login credentials and payment information.
 
-Relationships:
+Ensures fair and correct access control.
 
-A payment is made by a user for a specific booking.
+Enhances trust in the platform by preventing fraudulent or malicious activities.
 
-## Feature Breakdown
-This section outlines the core features of the Airbnb Clone project and how each contributes to the functionality of the platform.
+CI/CD Pipeline
+CI/CD (Continuous Integration/Continuous Deployment) automates testing, building, and deploying the app.
 
-User Management
-Users can register, log in, and manage their profiles. Depending on their role (guest or host), users can list properties or make bookings.
+Continuous Integration: Automatically runs tests whenever new code is pushed.
 
-Property Management
-Hosts can list new properties by providing details such as title, description, location, and price. They can also update or delete listings as needed.
+Continuous Deployment: Delivers updated code to production seamlessly using automation tools.
 
-Booking System
-Guests can view property availability and make bookings for specific dates. The system ensures that double-booking is avoided and allows guests to view their booking history.
+Tools Used:
 
-Reviews & Ratings
-After completing a stay, guests can leave reviews and rate the property. This feature helps maintain transparency and trust among users.
+GitHub Actions: Automates test and deploy workflows.
 
-Payment Integration
-The platform allows users to securely pay for bookings. Payment records are stored and linked to bookings and users for tracking and reporting.
-
-## API Security
-Security is a fundamental part of the backend design for the Airbnb Clone. The following key measures will be implemented to protect user data and ensure a safe, reliable experience.
-
-Authentication
-Users must log in using secure credentials to access protected routes. This ensures that only verified users can perform actions like booking properties or making payments.
-
-Authorization
-Role-based access control will restrict certain actions to specific user types (e.g., only hosts can create listings). This prevents misuse of features and maintains platform integrity.
-
-## Rate Limiting
-APIs will enforce rate limiting to protect against brute-force attacks and abuse. This helps preserve server resources and enhances system stability.
-
-## Data Encryption
-Sensitive data such as passwords will be hashed before storage, and all traffic will be secured with HTTPS. This protects against eavesdropping and data breaches.
-
-Secure Payment Handling
-Payments will be processed using a secure and trusted third-party gateway. This ensures financial data is not directly exposed to the backend, reducing liability and fraud risks.
-
-Security is essential to protect user data, build trust, and prevent unauthorized access to the system. Without these measures, the platform would be vulnerable to data leaks, account takeovers, and financial fraud.
-
-## CI/CD Pipeline
-Continuous Integration and Continuous Deployment (CI/CD) pipelines are automated workflows that help streamline the software development process. They automatically test, build, and deploy code every time changes are made, ensuring that new updates are safe, stable, and delivered quickly.
-
-Why CI/CD is Important
-Improves Code Quality: Automated testing catches bugs early before they reach production.
-
-Speeds Up Deployment: Changes can be delivered faster and more reliably with fewer manual steps.
-
-Promotes Team Collaboration: Developers can integrate their code regularly, reducing merge conflicts and improving workflow.
-
-Tools to Use
-GitHub Actions: Automates testing, linting, and deployment processes directly from the GitHub repository.
-
-Docker: Ensures consistent environments across development, testing, and production.
-
-Heroku / Netlify / AWS: Can be used as deployment platforms to host the final application.
-
-
-
+Docker: Ensures consistent environments across development, staging, and production.
 
